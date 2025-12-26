@@ -27,3 +27,15 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 // If no differences are found after comparing n bytes, it returns zero.
 // Pointer casting is used to treat the void pointers as unsigned char pointers for byte-wise comparison.
 // A pointer is a variable that stores the memory address of another variable.
+
+int main(int argc, char **argv)
+{
+	// argv is argument vector, an array of strings representing command-line arguments
+	if (argc != 4)
+		return 1;
+	size_t n = (size_t)atoi(argv[3]); // Convert the third argument to size_t for number of bytes to compare, atoi converts string to integer by parsing it
+	// Compare the results of ft_memcmp and standard memcmp
+	if (ft_memcmp(argv[1], argv[2], n) != memcmp(argv[1], argv[2], n))
+		return 1;
+	return 0;
+}
