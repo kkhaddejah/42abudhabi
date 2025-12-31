@@ -3,7 +3,6 @@
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
-	size_t	j;
 	size_t	word_count;
 	char	**result;
 
